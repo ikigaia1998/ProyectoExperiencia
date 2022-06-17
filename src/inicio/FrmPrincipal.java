@@ -45,6 +45,7 @@ import gui.FrmReporteLibro;
 import gui.FrmReporteProveedor;
 import gui.FrmReporteSala;
 import gui.FrmReporteUsuario;
+import gui.Trabajador.FrmCrudTrabajador;
 import model.UsuarioModel;
 import util.DatosGlobales;
 
@@ -103,6 +104,7 @@ public class FrmPrincipal extends JFrame implements WindowListener, ActionListen
 	public FrmCrudSala frmCrudSala = new FrmCrudSala();
 	public FrmCrudUsuario frmCrudUsuario = new FrmCrudUsuario();
 	public FrmCrudProveedor frmCrudProveedor = new FrmCrudProveedor();
+	public FrmCrudTrabajador frmCrudTrabajador = new FrmCrudTrabajador();
 
 	public FrmConsultaAlumno frmConsultaAlumno = new FrmConsultaAlumno();
 	public FrmConsultaAutor frmConsultaAutor = new FrmConsultaAutor();
@@ -136,7 +138,7 @@ public class FrmPrincipal extends JFrame implements WindowListener, ActionListen
 		setJMenuBar(menuBar);
 
 		JMenu mnAdministracin = new JMenu("Registros (PC1)");
-		mnAdministracin.setVisible(false);
+		mnAdministracin.setVisible(true);
 		menuBar.add(mnAdministracin);
 
 		JMenu mnCrud = new JMenu("Crud (PC02)");
@@ -153,7 +155,7 @@ public class FrmPrincipal extends JFrame implements WindowListener, ActionListen
 
 		// pc01
 		mntRegAlumno = new JMenuItem("Registro de Alumno");
-		mntRegAlumno.setVisible(false);
+		mntRegAlumno.setVisible(true);
 		mntRegAlumno.addActionListener(this);
 		mnAdministracin.add(mntRegAlumno);
 
@@ -324,6 +326,7 @@ public class FrmPrincipal extends JFrame implements WindowListener, ActionListen
 		desktop.add(frmRegistroSala);
 		desktop.add(frmRegistroUsuario);
 		desktop.add(frmRegistroProveedor);
+		desktop.add(frmCrudTrabajador);
 
 		desktop.add(frmCrudAlumno);
 		desktop.add(frmCrudAutor);
@@ -395,8 +398,8 @@ public class FrmPrincipal extends JFrame implements WindowListener, ActionListen
 	public void actionPerformed(ActionEvent arg0) {
 		//PC01 Registros
 		if (arg0.getSource() == mntRegAlumno) {
-			centrar(frmRegistroAlumno);
-			frmRegistroAlumno.setVisible(true);
+			centrar(frmCrudTrabajador);
+			frmCrudTrabajador.setVisible(true);
 		}
 		if (arg0.getSource() == mntRegAutor) {
 			centrar(frmRegistroAutor);
