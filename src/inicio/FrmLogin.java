@@ -80,7 +80,10 @@ public class FrmLogin extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnEnviar || e.getSource() == txtLogin || e.getSource() == txtClave) {
+		frm.setVisible(true);
+		this.setVisible(false);
+		frm.muestraOpciones();
+		/*if (e.getSource() == btnEnviar || e.getSource() == txtLogin || e.getSource() == txtClave) {
 
 			String login = txtLogin.getText().trim();
 			String clave = new String(txtClave.getPassword());
@@ -97,6 +100,7 @@ public class FrmLogin extends JDialog implements ActionListener {
 			}
 
 		}
+		*/
 		if (e.getSource() == btnLimpiar) {
 			txtLogin.setText("");
 			txtClave.setText("");
